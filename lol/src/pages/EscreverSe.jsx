@@ -1,9 +1,14 @@
 import React from 'react'
+import { Outlet, Link } from "react-router-dom";
 import '../styles/EscreverSe.css'
 
 const EscreverSe = () => {
   return (
-    <div>EscreverSe</div>
+    <div>
+
+<li>  <Link to="/">LandingPage</Link></li>
+
+    </div>
   )
 }
 
