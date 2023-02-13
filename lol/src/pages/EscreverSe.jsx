@@ -11,7 +11,7 @@ const EscreverSe = () => {
 <div className='inscriv-main'>
 
 <div className='cadastro'>
-    <h2>cadastre-se</h2>
+  
   <input id='Name' name='Name' placeholder='Name' type="text"  />
   
 </div>
