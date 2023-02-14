@@ -27,20 +27,3 @@
     width: 609px;
   
 }
-
-.LdPage-main .Login-ldPage{
-    width: 70%;
-    display: flex;
-    justify-content: center;
-   text-align: center;
-    max-width: 500px;
-    min-width: 400px;
-    height: 500px;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-   background-color: var(--cor2);
-}
-
-.LdPage-main .Login-ldPage .text-ldpage{
-    margin-top: 30px;
-}

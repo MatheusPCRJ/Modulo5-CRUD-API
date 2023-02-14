@@ -1,5 +1,6 @@
 import React from 'react'
 import { Outlet, Link } from "react-router-dom";
+import CardLandingPage from '../components/CardLandingPage';
 import '../styles/LandingPage.css'
 import ImgBackground from "../image/background.png"
 import Jinx from "../image/Jinx.png"
@@ -9,22 +10,7 @@ const LandingPage = () => {
 <div className="LdPage-main">
 
 <section>
-  <div className="Login-ldPage">
-    <div className="text-ldpage">
-      <h1>Entrar</h1>
-      <form action="">
-        <input type="text" />
-        <input type="text" />
-      </form>
-      <div className="social-logins">
-        <div className="sc-login"><img src="" alt="" /></div>
-        <div className="sc-login"><img src="" alt="" /></div>
-        <div className="sc-login"><img src="" alt="" /></div>
-      </div>
-      <input type="checkbox" name="" id="" />
-      <input type="button" value="" />
-    </div>
-  </div>
+ <CardLandingPage/>
 </section>
 <section className='ImgJinx'>
     <img src={Jinx} alt="" />
