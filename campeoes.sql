@@ -1,0 +1,55 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Tempo de geração: 14-Fev-2023 às 22:32
+-- Versão do servidor: 10.4.27-MariaDB
+-- versão do PHP: 8.2.0
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Banco de dados: `leagueoflegens`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `campeoes`
+--
+
+CREATE TABLE `campeoes` (
+  `campeoes` varchar(150) NOT NULL,
+  `lane_desginada` varchar(3) NOT NULL,
+  `funçao` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Extraindo dados da tabela `campeoes`
+--
+
+INSERT INTO `campeoes` (`campeoes`, `lane_desginada`, `funçao`) VALUES
+('Jinx', 'BOT', 'Atirador'),
+('Ahri', 'MID', 'Mago'),
+('VI', 'JG', 'Lutador'),
+('Rammus', 'JG', 'Tanque'),
+('Kayle', 'TOP', 'Lutador'),
+('Kayn', 'jg', 'Lutador'),
+('Galio', 'MID', 'Tanque'),
+('Poppy', 'TOP', 'Tanque'),
+('Nilah', 'BOT', 'Lutador'),
+('Volibear', 'TOP', 'Lutador');
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
