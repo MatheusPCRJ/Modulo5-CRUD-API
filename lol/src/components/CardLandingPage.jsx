@@ -22,7 +22,7 @@ const CardLandingPage = () => {
       });
     const onSubmit = data => console.log(data);
 
-
+      
 
   return (
     <div className="Login-ldPage">

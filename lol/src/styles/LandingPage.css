@@ -24,6 +24,9 @@
 }
 
 .LdPage-main .ImgJinx img {
-    width: 609px;
+    width: 670px;
+
+    position: fixed;
+    bottom: 0px;
   
 }
