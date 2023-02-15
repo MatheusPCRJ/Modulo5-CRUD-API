@@ -1,7 +1,11 @@
 import React from 'react'
+import { Outlet, Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
+import facebook from "../image/facebook.png"
+import google from "../image/google.png"
+import riot from "../image/riot.png"
 import '../styles/CardLandingPage.css'
 
 const CardLandingPage = () => {
@@ -25,16 +29,22 @@ const CardLandingPage = () => {
     <div className="text-ldpage">
       <h1>Entrar</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input type="text" {...register("name")}  />
-        <p>{errors.name?.message}</p>
-        <input type="text" {...register("password",{ required: true })}  />
-        {errors.password && <p>Digite sua senha</p>}
+        <div className="inputs">
+            <input type="text" {...register("name")}  placeholder="Nome"  className='inputText'/>
+        <span>{errors.name?.message}</span>
+        <input type="text" {...register("password",{ required: true })} placeholder="Senha"   className='inputText' />
+        {errors.password && <span>Digite sua senha</span>}</div>
+         <div className="infos-card">
+         <Link to="Escrever-se" >Cadastre-se</Link>
+         
+         </div>
+        
       <div className="social-logins">
-        <div className="sc-login"><img src="" alt="" /></div>
-        <div className="sc-login"><img src="" alt="" /></div>
-        <div className="sc-login"><img src="" alt="" /></div>
+         <div className="sc-login-facebook"><img src={facebook} alt="" /></div>
+        <div className="sc-login-google"><img src={google} alt="" /></div>
+        <div className="sc-login-riot"><img src={riot} alt="" /></div>
       </div>
-      <input type="checkbox" name="" id="" />
+      
       <button type="submit">Click</button>
       </form>
     </div>

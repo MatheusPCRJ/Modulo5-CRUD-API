@@ -16,10 +16,10 @@ code {
 :root {
   --cor1 :#535AFF;
   --cor2 :white;
-  /* 
-  --cor3 :;
-  --cor4 :;
-  --cor5 :;
-  --cor6 :;
+  --cor3 :#000000;
+  --cor4 :#5E5E5E;  
+  --cor5 :#EBEBEB;
+  --cor6 :#D9D9D9;
+   /* 
   --cor7 :; */
 }

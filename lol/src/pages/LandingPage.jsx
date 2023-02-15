@@ -1,5 +1,4 @@
 import React from 'react'
-import { Outlet, Link } from "react-router-dom";
 import CardLandingPage from '../components/CardLandingPage';
 import '../styles/LandingPage.css'
 import ImgBackground from "../image/background.png"

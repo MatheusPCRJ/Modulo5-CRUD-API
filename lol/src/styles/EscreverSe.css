@@ -1,44 +1,37 @@
 .Img-Inscriv{
     width: 100%;
     height: 100vh;
-    background-position: center;
+    display: flex;
     background-repeat: no-repeat;
     background-size: cover;
     background: #69707D;
 
 }
-.inscriv-main{
-    
+
+.inscriv-main {
+    width: 100%;
+    height: 100vh;
     display: flex;
-    flex-direction: row;
+    align-items: center;
     justify-content: center;
-    margin-top: 60px;
-}
-.cadastro{
-    width: 70%;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    max-width: 500px;
-    min-width: 400px;
-    height: 500px;
-    border-radius: 10px;
-    box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
-    background-color: var(--cor2);
+    background-position: center;
 }
 
+.inscriv-main section{width: 50%;
+overflow: hidden;
+height: 100%;}
 
 
+.inscriv-main section img{
+    width: 650px;
+    position: relative;
+    bottom: -150px;
+    left: 10px;
+}
 
-.foto{
-    margin-top: 20px;
-    width: 650px;  
- }
+.inscriv-main  .cadastro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
- #Name{
-    margin-top: 150px;
-    height: 40px;
-    width: 20pc;
-    border-radius: 3px;
-    color: antiquewhite;
- }
