@@ -1,21 +1,17 @@
 import ReactDOM from "react-dom/client";
+import '../src/index.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./pages/Layout";
-import Home from "./pages/Home";
-import Blogs from "./pages/Blogs";
-import Contact from "./pages/Contact";
-import NoPage from "./pages/NoPage";
+import LandingPage from "./pages/LandingPage"
+import EscreverSe from "./pages/EscreverSe"
+import RecuperarSenha from "./pages/RecuperarSenha"
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="blogs" element={<Blogs />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="*" element={<NoPage />} />
-        </Route>
+          <Route path="/" element={<LandingPage />}/>
+          <Route path="RecuperarSenha" element={<RecuperarSenha/>} />
+          <Route path="Escrever-se" element={<EscreverSe />} />
       </Routes>
     </BrowserRouter>
   );

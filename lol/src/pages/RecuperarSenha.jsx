@@ -1,9 +1,12 @@
 import React from 'react'
+import { Outlet, Link } from "react-router-dom";
 import '../styles/RecuperarSenha.css'
 
 const RecuperarSenha = () => {
   return (
-    <div>RecuperarSenha</div>
+    <div>
+<li>  <Link to="/">LandingPage</Link></li>
+    </div>
   )
 }
 
