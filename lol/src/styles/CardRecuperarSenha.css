@@ -1,0 +1,78 @@
+.CardRecuperarSenha{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+   text-align: center;
+    max-width: 500px;
+    min-width: 400px;
+    min-height: 500px;
+    max-width: 500px;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   background-color: var(--cor2);
+}
+
+.text{
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    flex-direction: column;
+}
+
+.text h1{
+    font-size: 2.3em;
+    color: var(--cor3);
+}
+
+.text img{
+    position: relative;
+    width: 80px;
+}
+
+.text span{
+  font-size: 0.8em;
+  color: var(--cor4);
+  font-weight: 500;
+}
+
+.text input{
+    border: none;
+margin-bottom: 30px;
+background-color: var(--cor6);
+width: 300px;
+padding:20px;
+border-radius: 10px;
+font-weight: bold;
+}
+
+.text button{
+
+width: 60px;
+height: 60px;
+cursor: pointer;
+border-radius: 10px;
+border: 1px solid var(--cor6);
+color: var(--cor6);
+}
+
+/* DETALHE */
+
+.detalhe{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+.detalhe .linha{
+width: 150px;
+height: 0px;
+    border: 1px solid var(--cor3);
+    opacity: 0.4;
+    margin: 0px 5px;
+}
+
+.detalhe  span{
+    color: var(--cor3);
+    opacity: 0.6;
+}
