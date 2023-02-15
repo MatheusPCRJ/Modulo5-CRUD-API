@@ -15,21 +15,6 @@ const LandingPage = () => {
     <img src={Jinx} alt="" />
 </section>
 </div>
-{/* <nav>
-        <ul>
-          <li>
-          <Link to="/">LandingPage</Link>
-          </li>
-          <li>
-            <Link to="/Escrever-se">Escrever-se</Link>
-          </li>
-          <li>
-            <Link to="/RecuperarSenha">Recuperar Senha</Link>
-          </li>
-        </ul>
-      </nav>
-
-      <Outlet /> */}
 
     </div>
   )
