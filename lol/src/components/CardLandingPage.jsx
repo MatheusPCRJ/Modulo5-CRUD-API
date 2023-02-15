@@ -35,7 +35,7 @@ const CardLandingPage = () => {
         <input type="text" {...register("password",{ required: true })} placeholder="Senha"   className='inputText' />
         {errors.password && <span>Digite sua senha</span>}</div>
          <div className="infos-card">
-         <Link to="Escrever-se" >Cadastre-se</Link>
+         <Link to="http://localhost:3000/escrever-se" >Cadastre-se</Link>
          
          </div>
         

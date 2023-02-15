@@ -6,7 +6,9 @@ import "../styles/Home.css"
 import Video from "../image/lol-video.webm"
 import { Outlet, Link } from "react-router-dom";
 import ImgProduto from "../image/hiata.png"
-import Olhos from "../image/olhos.png"
+import Banner1 from "../image/banner1.jpg"
+import Banner2 from "../image/banner2.jpg"
+import Banner3 from "../image/banner3.jpg"
 
 const Home = () => {
   return (
@@ -19,14 +21,14 @@ const Home = () => {
         <h3>BEM VINDO AO LOL</h3>
         <h1>MELHORES SKINS</h1>
         <span>O site de maior venda de skins do servidor br</span>
-        <button><Link>LETS GO</Link></button>
+        <button className='btn-primary'><Link>LETS GO</Link></button>
        </div>
       </div>
 
       <div className="main-info">
         <div className="card">
           <div className="info-card">
-          <img src={Olhos} alt="" />
+          <img src={Banner1} alt="" />
           <div className="text-card-info">
           <h3>Eleito o melhor site de 2022 de venda de skins</h3>
             <span>Riot games </span>
@@ -36,7 +38,7 @@ const Home = () => {
         </div>
         <div className="card">
           <div className="info-card">
-          <img src="" alt="" />
+          <img src={Banner2} alt="" />
           <div className="text-card-info">
             <h3>Aceitamos todos os tipos de pagamento</h3>
             <span>MasterCard</span>
@@ -46,7 +48,7 @@ const Home = () => {
         </div>
         <div className="card">
           <div className="info-card">
-          <img src="" alt="" />
+          <img src={Banner3} alt="" />
           <div className="text-card-info">
             <h3>Rapido e eficiente,os melhores em seu ramo</h3>
             <span>Cliente</span>
@@ -63,7 +65,7 @@ const Home = () => {
             <h3>ESCOLHA A SUA</h3>
             <h1>SKIN</h1>
             <span>Cai na hora na sua conta, aceitamos pix, parcelamos em ate 10 vezes</span>
-            <button><Link>LETS GO</Link></button>
+            <button className='btn-primary' ><Link>LETS GO</Link></button>
           </div>
         </section>
         <section className='img-produto'>

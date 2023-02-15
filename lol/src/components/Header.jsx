@@ -10,12 +10,12 @@ const Header = () => {
                <div className="logo">
                 <img src={riot} alt="" />
                </div>
-                <Link to="/" >HOME</Link>
-                <Link to="Skins" > SKINS</Link>
+                <Link to="http://localhost:3000/home" >HOME</Link>
+                <Link to="http://localhost:3000/skins" > SKINS</Link>
             </nav>
 
             <div className="Sign-in">
-              <Link to="LandingPage" > SIGN-IN</Link>
+              <Link to="/" > SIGN-IN</Link>
             </div>
         </header>
   )

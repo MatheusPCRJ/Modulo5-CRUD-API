@@ -43,7 +43,7 @@ const schema = yup.object({
           
         </form>
        
-       <Link to ='/'> Voltar ao login</Link>
+       <Link to ='http://localhost:3000/'> Voltar ao login</Link>
        </div>
       
     </div>
