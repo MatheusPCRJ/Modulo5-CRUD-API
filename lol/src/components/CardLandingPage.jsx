@@ -1,55 +1,84 @@
-import React from 'react'
+import React from "react";
+import { useState } from 'react';
 import { Outlet, Link } from "react-router-dom";
-import { useForm } from "react-hook-form";
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from "yup";
-import facebook from "../image/facebook.png"
-import google from "../image/google.png"
-import riot from "../image/riot.png"
-import '../styles/CardLandingPage.css'
+import Axios from "axios";
+import facebook from "../image/facebook.png";
+import google from "../image/google.png";
+import riot from "../image/riot.png";
+import "../styles/CardLandingPage.css";
 
 const CardLandingPage = () => {
 
+  const [Login, setLogin] = useState({
+    nickname:"",
+    senha:""
 
-    const schema = yup.object({
-    name: yup.string().required('Escreva seu nome'),
-    password:yup.number().positive().min(6).required(),
-      }).required();
-      
+});
 
-    const { register, handleSubmit, watch, formState: { errors } } = useForm({
-        resolver: yupResolver(schema)
-      });
-    const onSubmit = data => console.log(data);
 
-      
+const formChange = (e) =>{
+  setLogin((prev) => ({...prev, [e.target.name]: e.target.value}))
+}
+
+const onSubmit = async e => {
+  e.preventDefault()
+console.log(Login)
+
+try {
+ await Axios.get("http://localhost:8800/inscrever",Login)
+} catch (error) {
+  console.log(error)
+}
+
+}
+
+
+
 
   return (
     <div className="Login-ldPage">
-    <div className="text-ldpage">
-      <h1>Entrar</h1>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="inputs">
-            <input type="text" {...register("name")}  placeholder="Nome"  className='inputText'/>
-        <span>{errors.name?.message}</span>
-        <input type="text" {...register("password",{ required: true })} placeholder="Senha"   className='inputText' />
-        {errors.password && <span>Digite sua senha</span>}</div>
-         <div className="infos-card">
-         <Link to="http://localhost:3000/escrever-se" >Cadastre-se</Link>
-         
-         </div>
-        
-      <div className="social-logins">
-         <div className="sc-login-facebook"><img src={facebook} alt="" /></div>
-        <div className="sc-login-google"><img src={google} alt="" /></div>
-        <div className="sc-login-riot"><img src={riot} alt="" /></div>
-      </div>
-      
-      <button type="submit">Click</button>
-      </form>
-    </div>
-  </div>
-  )
-}
+      <div className="text-ldpage">
+        <h1>Entrar</h1>
+        <form>
+          <div className="inputs">
+            <input
+              onChange={formChange}
+              name="nickname"
+              type="text"
+              placeholder="Nickname"
+              className="inputText"
+            />
 
-export default CardLandingPage
+            <input
+              onChange={formChange}
+              name="senha"
+              type="password"
+              placeholder="Senha"
+              className="inputText"
+            />
+
+            <div className="infos-card">
+              <Link to="http://localhost:3000/escrever-se">Cadastre-se</Link>
+            </div>
+
+            <div className="social-logins">
+              <div className="sc-login-facebook">
+                <img src={facebook} alt="" />
+              </div>
+              <div className="sc-login-google">
+                <img src={google} alt="" />
+              </div>
+              <div className="sc-login-riot">
+                <img src={riot} alt="" />
+              </div>
+            </div>
+
+            <button   onClick={onSubmit} type="submit">Click</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default CardLandingPage;
