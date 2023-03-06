@@ -19,27 +19,37 @@ app.use(cors());
 
 app.get("/inscrever", (req, res)=>{
 
+    const q = "SELECT * FROM  inscrever"
 
-    const q = "SELECT * FROM inscrever WHERE (?)"
-    const values = [
-        req.body.nickname,
-        req.body.senha
-    ]
-
-    if(nickname)
     db.query(q,(err, data)=>{
         if(err) return res.json(err)
         return res.json(data)
     })
+
+    // const q = "SELECT * FROM inscrever WHERE (?)"
+    // const values = [
+    //     req.body.nickname,
+    //     req.body.senha
+    // ]
+
+    // if(nickname)
+    // db.query(q,(err, data)=>{
+    //     if(err) return res.json(err)
+    //     return res.json(data)
+    // })
 })
 
+// 
+
 app.post("/inscrever", (req,res)=>{
-    const q = "INSERT INTO inscrever (`nome`, `nickname`) VALUES (?)"
+    const q = "INSERT INTO inscrever (`nome`, `nickname`,`senha`)  VALUES (?)"
     const values = [
         req.body.nome,
-        req.body.nickname
-   
+        req.body.nickname,
+        req.body.password
     ]
+
+
 
     db.query(q,[values], (err,data)=>{
         if(err) return res.json(err)
@@ -59,6 +69,52 @@ app.get("/lol", (req, res)=>{
         return res.json(data)
     })
 })
+
+
+
+
+app.get("/login",(req,res)=>{
+
+ 
+    const q = "SELECT * FROM inscrever WHERE  nickname  ==  VALUES (?) AND password ==  VALUES (?)"
+    const values = [
+        req.body.nickname,
+        req.body.password
+    ]
+    
+    db.query(q,[values],(err, data)=>{
+        if(err) return res.json(err)
+        return res.json(data)
+    })
+
+})
+
+
+
+// SKINS
+app.get("/skins",(req,res)=>{
+
+ 
+    const q = "SELECT * FROM skins"
+
+    db.query(q,(err, data)=>{
+        if(err) return res.json(err)
+        return res.json(data)
+    })
+
+})
+
+
+// INCIO do get dos cards das skins
+
+
+
+
+
+
+
+
+
 
 app.listen(8800, ()=>{
     console.log("Backend conectado!!!")

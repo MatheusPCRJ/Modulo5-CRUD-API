@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 14-Fev-2023 às 23:33
+-- Tempo de geração: 06-Mar-2023 às 15:05
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `campeoes` (
   `campeoes` varchar(150) NOT NULL,
   `lane_desginada` varchar(3) NOT NULL,
-  `funçao` varchar(20) NOT NULL,
+  `funcao` varchar(20) NOT NULL,
   `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
@@ -38,7 +38,7 @@ CREATE TABLE `campeoes` (
 -- Extraindo dados da tabela `campeoes`
 --
 
-INSERT INTO `campeoes` (`campeoes`, `lane_desginada`, `funçao`, `id`) VALUES
+INSERT INTO `campeoes` (`campeoes`, `lane_desginada`, `funcao`, `id`) VALUES
 ('Jinx', 'BOT', 'Atirador', 1),
 ('Ahri', 'MID', 'Mago', 2),
 ('VI', 'JG', 'Lutador', 3),
@@ -59,30 +59,7 @@ INSERT INTO `campeoes` (`campeoes`, `lane_desginada`, `funçao`, `id`) VALUES
 CREATE TABLE `inscrever` (
   `nome` varchar(30) DEFAULT NULL,
   `nickname` varchar(30) NOT NULL,
-  `senha` int(6) NOT NULL,
-  `confirmarSenha` int(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `login`
---
-
-CREATE TABLE `login` (
-  `id` int(11) NOT NULL,
-  `nickname_inscrever` varchar(30) DEFAULT NULL,
-  `senha` int(6) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `recuperarsenha`
---
-
-CREATE TABLE `recuperarsenha` (
-  `nickname_inscrever` varchar(30) DEFAULT NULL
+  `password` varchar(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -102,19 +79,6 @@ ALTER TABLE `inscrever`
   ADD PRIMARY KEY (`nickname`);
 
 --
--- Índices para tabela `login`
---
-ALTER TABLE `login`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `nickname_inscrever` (`nickname_inscrever`);
-
---
--- Índices para tabela `recuperarsenha`
---
-ALTER TABLE `recuperarsenha`
-  ADD UNIQUE KEY `nickname_inscrever` (`nickname_inscrever`);
-
---
 -- AUTO_INCREMENT de tabelas despejadas
 --
 
@@ -123,29 +87,63 @@ ALTER TABLE `recuperarsenha`
 --
 ALTER TABLE `campeoes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+-- Estrutura da tabela `skins`
+--
+
+CREATE TABLE `skins` (
+  `id` int(11) NOT NULL,
+  `id_campeao` int(11) DEFAULT NULL,
+  `NomeDaSkin` varchar(100) DEFAULT NULL,
+  `ImgDaSkin` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- AUTO_INCREMENT de tabela `login`
+-- Extraindo dados da tabela `skins`
 --
-ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+INSERT INTO `skins` (`id`, `id_campeao`, `NomeDaSkin`, `ImgDaSkin`) VALUES
+(1, 1, 'Jinx Cidade do Crime', 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jinx_1.jpg'),
+(2, 1, 'Fogos de Artificio', 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jinx_2.jpg'),
+(3, 1, 'Caça Zumbi', 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jinx_3.jpg'),
+(4, 1, 'Guardiã Estelar', 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jinx_4.jpg');
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices para tabela `skins`
+--
+ALTER TABLE `skins`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_campeao` (`id_campeao`);
+
+--
+-- AUTO_INCREMENT de tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `skins`
+--
+ALTER TABLE `skins`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restrições para despejos de tabelas
 --
 
 --
--- Limitadores para a tabela `login`
+-- Limitadores para a tabela `skins`
 --
-ALTER TABLE `login`
-  ADD CONSTRAINT `login_ibfk_1` FOREIGN KEY (`nickname_inscrever`) REFERENCES `inscrever` (`nickname`),
-  ADD CONSTRAINT `login_ibfk_2` FOREIGN KEY (`nickname_inscrever`) REFERENCES `inscrever` (`nickname`);
-
---
--- Limitadores para a tabela `recuperarsenha`
---
-ALTER TABLE `recuperarsenha`
-  ADD CONSTRAINT `recuperarsenha_ibfk_1` FOREIGN KEY (`nickname_inscrever`) REFERENCES `inscrever` (`nickname`);
+ALTER TABLE `skins`
+  ADD CONSTRAINT `skins_ibfk_1` FOREIGN KEY (`id_campeao`) REFERENCES `campeoes` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
