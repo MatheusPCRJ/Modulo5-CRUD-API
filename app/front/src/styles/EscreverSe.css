@@ -1,0 +1,39 @@
+.Img-Inscriv{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+
+ background-color:  #69707D;;
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+
+.inscriv-main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    
+}
+
+.inscriv-main section{width: 50%;
+overflow: hidden;
+height: 100%;}
+
+
+.inscriv-main section img{
+    width: 700px;
+  position: fixed;
+ right: 0;
+  bottom: 0;
+}
+
+.inscriv-main  .cadastro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
