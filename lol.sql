@@ -92,3 +92,60 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+-- Estrutura da tabela `skins`
+--
+
+CREATE TABLE `skins` (
+  `id` int(11) NOT NULL,
+  `id_campeao` int(11) DEFAULT NULL,
+  `NomeDaSkin` varchar(100) DEFAULT NULL,
+  `ImgDaSkin` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Extraindo dados da tabela `skins`
+--
+
+INSERT INTO `skins` (`id`, `id_campeao`, `NomeDaSkin`, `ImgDaSkin`) VALUES
+(1, 1, 'Jinx Cidade do Crime', 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jinx_1.jpg'),
+(2, 1, 'Fogos de Artificio', 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jinx_2.jpg'),
+(3, 1, 'Caça Zumbi', 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jinx_3.jpg'),
+(4, 1, 'Guardiã Estelar', 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jinx_4.jpg');
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices para tabela `skins`
+--
+ALTER TABLE `skins`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_campeao` (`id_campeao`);
+
+--
+-- AUTO_INCREMENT de tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `skins`
+--
+ALTER TABLE `skins`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- Restrições para despejos de tabelas
+--
+
+--
+-- Limitadores para a tabela `skins`
+--
+ALTER TABLE `skins`
+  ADD CONSTRAINT `skins_ibfk_1` FOREIGN KEY (`id_campeao`) REFERENCES `campeoes` (`id`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
