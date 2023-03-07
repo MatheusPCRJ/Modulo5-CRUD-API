@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.div-pai-PCRJ {
+    width: 300px;
+    margin: 50px auto 0 auto;
+}
+.div-texto-PCRJ h1{
+    font-family: 'Inter';
+    font-style: italic;
+}
+.traducao-PCRJ {
+    color: #828282;
+    padding: 30px 0 30px 90px;
+}
+.mensagem-PCRJ {
+    font-family: 'Inter';
+    color: #252525;
+}
+.div-pai-PCRJ img {
+    width: 300px;
+    height: 350px;
+}
