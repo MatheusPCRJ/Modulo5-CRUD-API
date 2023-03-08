@@ -8,7 +8,7 @@
     margin: 50px auto 0 auto;
 }
 .div-texto-PCRJ h1{
-    font-family: 'Inter';
+
     font-style: italic;
 }
 .traducao-PCRJ {
@@ -19,10 +19,22 @@
     font-family: 'Inter';
     color: #252525;
 }
+.mensagem-PCRJ a {
+    text-decoration: none;
+    color: #ff4949;
+}
+.mensagem-PCRJ a:hover {
+    text-decoration: underline;
+    font-size: 22px;
+}
+.mensagem-PCRJ a:active {
+    color: #252525;
+}
 .div-pai-PCRJ img {
     width: 300px;
     height: 350px;
 }
+
 
 @media (min-width: 768px) {
     .div-pai-PCRJ {
@@ -31,9 +43,7 @@
     }
     .div-texto-PCRJ {
         position: absolute;
-        position: absolute;
         top: 130px;
-
     }
     .div-texto-PCRJ h1{
         font-size: 50px;
@@ -50,5 +60,28 @@
         height: 498px;
         left: 434px;
         top: -50px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .div-pai-PCRJ {
+        width: 1195px;
+        position: relative;
+    }
+    .div-texto-PCRJ {
+        top: 220px;
+    }
+    .div-texto-PCRJ h1{
+        font-size: 70px;
+    }
+    .traducao-PCRJ {
+        font-size: 20px;
+    }
+    .div-pai-PCRJ img {
+        position: absolute;
+        width: 623px;
+        height: 842px;
+        left: 611px;
+        top: -90px;
     }
 }

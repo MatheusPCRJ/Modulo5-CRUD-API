@@ -15,8 +15,8 @@ const NotFound = () => {
             <h1>404 - Not Found </h1>
             <p className="traducao-PCRJ">Pagina nao encontrada</p>
             <p className="mensagem-PCRJ">
-              Parece que você está perdido soldado <br />
-              Clique aqui para achar sua <Link to="/home">Guarnição</Link>
+              Parece que você está perdido soldado. <br />
+              Clique aqui para achar sua <Link to="/home">Guarnição</Link>!
             </p>
           </div>
           <img src={akali} />
