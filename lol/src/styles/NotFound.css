@@ -23,3 +23,32 @@
     width: 300px;
     height: 350px;
 }
+
+@media (min-width: 768px) {
+    .div-pai-PCRJ {
+        width: 700px;
+        position: relative;
+    }
+    .div-texto-PCRJ {
+        position: absolute;
+        position: absolute;
+        top: 130px;
+
+    }
+    .div-texto-PCRJ h1{
+        font-size: 50px;
+    } 
+    .traducao-PCRJ {
+        padding-left: 200px;
+    }
+    .mensagem-PCRJ {
+        font-size: 20px;
+        padding-left: 30px;
+    }
+    .div-pai-PCRJ img {
+        position: absolute;
+        height: 498px;
+        left: 434px;
+        top: -50px;
+    }
+}
