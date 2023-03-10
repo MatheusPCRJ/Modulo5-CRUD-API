@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.div-pai-PCRJ {
+    width: 300px;
+    margin: 50px auto 0 auto;
+}
+.div-texto-PCRJ h1{
+
+    font-style: italic;
+}
+.traducao-PCRJ {
+    color: #828282;
+    padding: 30px 0 30px 90px;
+}
+.mensagem-PCRJ {
+    font-family: 'Inter';
+    color: #252525;
+}
+.mensagem-PCRJ a {
+    text-decoration: none;
+    color: #ff4949;
+}
+.mensagem-PCRJ a:hover {
+    text-decoration: underline;
+    font-size: 22px;
+    transition: 0.4s;
+    opacity: 0.8;
+}
+.mensagem-PCRJ a:active {
+    color: #252525;
+}
+.div-pai-PCRJ img {
+    width: 300px;
+    height: 350px;
+}
+
+
+@media (min-width: 768px) {
+    .div-pai-PCRJ {
+        width: 700px;
+        position: relative;
+    }
+    .div-texto-PCRJ {
+        position: absolute;
+        top: 130px;
+    }
+    .div-texto-PCRJ h1{
+        font-size: 50px;
+    } 
+    .traducao-PCRJ {
+        padding-left: 200px;
+    }
+    .mensagem-PCRJ {
+        font-size: 20px;
+        padding-left: 30px;
+    }
+    .div-pai-PCRJ img {
+        position: absolute;
+        height: 498px;
+        left: 434px;
+        top: -50px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .div-pai-PCRJ {
+        width: 1195px;
+        position: relative;
+    }
+    .div-texto-PCRJ {
+        top: 220px;
+    }
+    .div-texto-PCRJ h1{
+        font-size: 70px;
+    }
+    .traducao-PCRJ {
+        font-size: 20px;
+    }
+    .div-pai-PCRJ img {
+        position: absolute;
+        width: 623px;
+        height: 842px;
+        left: 611px;
+        top: -90px;
+    }
+}
