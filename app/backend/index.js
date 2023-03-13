@@ -22,8 +22,9 @@ app.get("/inscrever", (req, res)=>{
 
     const q = "SELECT * FROM inscrever WHERE (?)"
     const values = [
+        req.body.nome,
         req.body.nickname,
-        req.body.senha
+        req.body.password
     ]
 
     if(nickname)
@@ -34,10 +35,11 @@ app.get("/inscrever", (req, res)=>{
 })
 
 app.post("/inscrever", (req,res)=>{
-    const q = "INSERT INTO inscrever (`nome`, `nickname`) VALUES (?)"
+    const q = "INSERT INTO inscrever (`nome`, `nickname`,`password`) VALUES (?)"
     const values = [
         req.body.nome,
-        req.body.nickname
+        req.body.nickname,
+        req.body.password
    
     ]
 
