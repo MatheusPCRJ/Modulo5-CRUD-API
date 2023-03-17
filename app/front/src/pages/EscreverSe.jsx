@@ -1,6 +1,6 @@
 import React from 'react'
 import { Outlet, Link } from "react-router-dom";
-import CardEscrever from '../components/CardEscrever-Se';
+import CardEscrever from '../components/CardEscreverSe';
 import '../styles/EscreverSe.css'
 import ashe from "../image/ashe.png"
 import ashee from "../image/ashee.png"

@@ -34,7 +34,7 @@ const CardLandingPage = () => {
     const onSubmit = setData
 
       console.log(Data)
-      
+
   // ENVIANDO PARA o LOCALHOST
 
   axios.post('',Data)
