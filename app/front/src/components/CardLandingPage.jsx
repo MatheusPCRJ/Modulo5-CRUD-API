@@ -37,7 +37,7 @@ const CardLandingPage = () => {
 
   // ENVIANDO PARA o LOCALHOST
 
-  axios.post('',Data)
+  axios.post('http://localhost:8800/inscrever',Data)
   .then(function (response) {
     console.log(response);
   })

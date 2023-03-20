@@ -16,6 +16,12 @@ const db = mysql.createConnection({
 app.use(express.json());
 app.use(cors());
 
+ 
+
+
+
+
+
 
 app.get("/inscrever", (req, res)=>{
 
@@ -46,16 +52,18 @@ app.post("/inscrever", (req,res)=>{
     const values = [
         req.body.nome,
         req.body.nickname,
-        req.body.password
+        req.body.senha
     ]
 
 
 
     db.query(q,[values], (err,data)=>{
         if(err) return res.json(err)
-        return res.json("Seu livro foi criado com sucesso!")
+        return res.json("foi criado com sucesso!")
     })
 })
+
+
 
 
 

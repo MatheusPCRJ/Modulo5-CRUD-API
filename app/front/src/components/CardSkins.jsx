@@ -14,23 +14,19 @@ const CardSkins = () => {
       });
   }, []);
 
-
+console.log(posts)
   return (
     <div className="CardSkins">
-      {posts.map((post, key) => {
+
+      <h1>{posts.campeoes}</h1>
+      {/* {posts.map((post, key) => {
         return (
         <div className="car2" key={key}> 
-            <div className="card-principal" >
-            <img src="" alt="" />
             
-            </div>
-            <div className="skins">
-
-            </div>
           </div>
          
         );
-      })}
+      })} */}
     </div>
   );
 };

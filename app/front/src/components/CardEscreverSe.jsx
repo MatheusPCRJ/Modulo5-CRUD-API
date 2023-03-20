@@ -36,7 +36,7 @@ const schema = yup.object({
 
  // ENVIANDO PARA o LOCALHOST
 
- axios.post('',CadData)
+ axios.post('http://localhost:8800/inscrever',CadData)
  .then(function (response) {
    console.log(response);
  })
