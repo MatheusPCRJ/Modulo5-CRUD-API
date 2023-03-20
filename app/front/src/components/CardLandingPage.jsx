@@ -16,10 +16,7 @@ const CardLandingPage = () => {
   // VERIFICANDO O STATUS DOS INPUTS
     const [Data,setData] = useState({
       nickname: '',
-      senha: ''
-    }
-     
-    )
+      senha: ''})
 
   // VALIDAÇAO DE INPUT
     const schema = yup.object({
@@ -37,9 +34,11 @@ const CardLandingPage = () => {
 
   // ENVIANDO PARA o LOCALHOST
 
-  axios.post('http://localhost:8800/inscrever',Data)
+
+
+  axios.get('http://localhost:8800/inscrever')
   .then(function (response) {
-    console.log(response);
+   console.log(response.data)
   })
   .catch(function (error) {
     console.error(error);
