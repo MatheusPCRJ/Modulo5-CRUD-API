@@ -50,6 +50,29 @@ const CardLandingPage = () => {
 
   console.log(user)
 
+  // VALIDANDO O LOGIN
+  const btnClick =() =>{
+   let nickname=Data.nickname
+   let senha = Data.senha
+   let validacaoLogin = false
+
+  //  LAÇO DE REPETIÇAO PERCORRENDO A MINHA API VINDO DO
+    for(let i in user){
+      if(nickname == user[i].nickname && senha == user[i].password){
+        validacaoLogin = true
+        break;
+      }
+    }
+
+    if(validacaoLogin == true){
+     window.location.href = 'home'
+
+    }
+    else{
+      alert("Usuario e senha nao cadastrado")
+    }
+  }
+
 
   return (
     <div className="Login-ldPage">
@@ -71,7 +94,7 @@ const CardLandingPage = () => {
         <div className="sc-login-google"><img src={google} alt="" /></div>
         <div className="sc-login-riot"><img src={riot} alt="" /></div>
       </div>
-       <input type="submit" />
+       <input type="submit" onClick={btnClick}/>
       </form>
     </div>
   </div>
