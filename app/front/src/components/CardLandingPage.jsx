@@ -18,6 +18,8 @@ const CardLandingPage = () => {
       nickname: '',
       senha: ''})
 
+    const [user,setUser] = useState([])
+
   // VALIDAÇAO DE INPUT
     const schema = yup.object({
     nickname: yup.string().required('Escreva seu nome'),
@@ -30,21 +32,23 @@ const CardLandingPage = () => {
       });
     const onSubmit = setData
 
-      console.log(Data)
 
   // ENVIANDO PARA o LOCALHOST
 
 
 
-  axios.get('http://localhost:8800/inscrever')
-  .then(function (response) {
-   console.log(response.data)
-  })
-  .catch(function (error) {
-    console.error(error);
-  });
+  useEffect(() => {
+    axios.get("http://localhost:8800/inscrever")
+      .then((response) => {
+        setUser(response.data);
+      })
+      .catch(() => {
+        console.log("Deu tud errado");
+      });
+  }, []);
 
 
+  console.log(user)
 
 
   return (

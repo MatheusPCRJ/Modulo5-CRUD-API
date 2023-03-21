@@ -48,7 +48,7 @@ app.get("/inscrever", (req, res)=>{
 // 
 
 app.post("/inscrever", (req,res)=>{
-    const q = "INSERT INTO inscrever (`nome`, `nickname`,`senha`)  VALUES (?)"
+    const q = "INSERT INTO inscrever (`nome`, `nickname`,`password`)  VALUES (?)"
     const values = [
         req.body.nome,
         req.body.nickname,
