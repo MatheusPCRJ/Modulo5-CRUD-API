@@ -69,7 +69,7 @@ const schema = yup.object({
           {errors.ConfirmPassword && <span> Sua senha precisa ser igual</span>}
           </div>
 
-          <button type='submit'> click</button>
+          <button type='submit'>Enviar</button>
           
         </form>
        
