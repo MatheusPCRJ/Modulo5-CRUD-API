@@ -32,10 +32,19 @@ const CardLandingPage = () => {
       });
     const onSubmit = setData
 
-    
+
+    // REQUISIÇAO E VALIDAÇAO DO LOGIN"
     axios.post('http://localhost:8800/login',Data)
     .then(function (response) {
-      console.log(response);
+      var status = response.data
+      console.log(status);
+
+      if(status =="1"){
+        window.location.href ='/home'
+      }
+      else{
+        alert('Nome ou senha invalidos')
+      }
     })
     .catch(function (error) {
       console.error(error);

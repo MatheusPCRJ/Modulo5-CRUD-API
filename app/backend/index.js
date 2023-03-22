@@ -97,9 +97,10 @@ app.post("/login",(req,res)=>{
     db.query(q,[nickname,senha],(err, data)=>{
         if(err) return res.json(err)
         if(data.length > 0){
-            console.log("Usuario logado")
+          res.send("1")
+          return
         }
-        else{ console.log("Usuario ou senha incorretos")}
+        else{ res.send("0")}
     })
 
  
