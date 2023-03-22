@@ -32,17 +32,7 @@ app.get("/inscrever", (req, res)=>{
         return res.json(data)
     })
 
-    // const q = "SELECT * FROM inscrever WHERE (?)"
-    // const values = [
-    //     req.body.nickname,
-    //     req.body.senha
-    // ]
-
-    // if(nickname)
-    // db.query(q,(err, data)=>{
-    //     if(err) return res.json(err)
-    //     return res.json(data)
-    // })
+ 
 })
 
 // 
@@ -80,21 +70,39 @@ app.get("/lol", (req, res)=>{
 
 
 
+app.get("/login", (req, res)=>{
 
-app.get("/login",(req,res)=>{
+    const q = "SELECT nickname,password FROM  inscrever"
 
- 
-    const q = "SELECT * FROM inscrever WHERE  nickname  ==  VALUES (?) AND password ==  VALUES (?)"
-    const values = [
-        req.body.nickname,
-        req.body.password
-    ]
-    
-    db.query(q,[values],(err, data)=>{
+    db.query(q,(err, data)=>{
         if(err) return res.json(err)
         return res.json(data)
     })
 
+ 
+})
+
+
+
+app.post("/login",(req,res)=>{
+
+ 
+    const q = "SELECT * FROM inscrever WHERE nickname = ? AND password = ? "
+        const nickname = req.body.nickname
+        const senha = req.body.senha
+    
+        console.log(nickname)
+        console.log(senha)
+
+    db.query(q,[nickname,senha],(err, data)=>{
+        if(err) return res.json(err)
+        if(data.length > 0){
+            console.log("Usuario logado")
+        }
+        else{ console.log("Usuario ou senha incorretos")}
+    })
+
+ 
 })
 
 

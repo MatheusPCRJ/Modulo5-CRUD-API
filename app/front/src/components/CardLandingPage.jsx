@@ -32,46 +32,45 @@ const CardLandingPage = () => {
       });
     const onSubmit = setData
 
+    
+    axios.post('http://localhost:8800/login',Data)
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.error(error);
+    });
+   
+   
+   
+   
 
   // ENVIANDO PARA o LOCALHOST
 
+  
+//  
+  // // VALIDANDO O LOGIN
+  // const btnClick =() =>{
+  //  let nickname=Data.nickname
+  //  let senha = Data.senha
+  //  let validacaoLogin = false
 
+  // //  LAÇO DE REPETIÇAO PERCORRENDO A MINHA API VINDO DO
+  //   for(let i in user){
+  //     if(nickname == user[i].nickname && senha == user[i].password){
+  //       validacaoLogin = true
+  //       break;
+  //     }
+  //   }
 
-  useEffect(() => {
-    axios.get("http://localhost:8800/inscrever")
-      .then((response) => {
-        setUser(response.data);
-      })
-      .catch(() => {
-        console.log("Deu tud errado");
-      });
-  }, []);
+  //   if(validacaoLogin == true){
+  //    window.location.href = 'home'
 
-
-  console.log(user)
-
-  // VALIDANDO O LOGIN
-  const btnClick =() =>{
-   let nickname=Data.nickname
-   let senha = Data.senha
-   let validacaoLogin = false
-
-  //  LAÇO DE REPETIÇAO PERCORRENDO A MINHA API VINDO DO
-    for(let i in user){
-      if(nickname == user[i].nickname && senha == user[i].password){
-        validacaoLogin = true
-        break;
-      }
-    }
-
-    if(validacaoLogin == true){
-     window.location.href = 'home'
-
-    }
-    else{
-      alert("Usuario e senha nao cadastrado")
-    }
-  }
+  //   }
+  //   else{
+  //     alert("Usuario e senha nao cadastrado")
+  //   }
+  // }
 
 
   return (
@@ -94,7 +93,7 @@ const CardLandingPage = () => {
         <div className="sc-login-google"><img src={google} alt="" /></div>
         <div className="sc-login-riot"><img src={riot} alt="" /></div>
       </div>
-       <input type="submit" onClick={btnClick}/>
+       <input type="submit" />
       </form>
     </div>
   </div>
